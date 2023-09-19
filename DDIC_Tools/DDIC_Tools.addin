@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+	<AddIn Type="Command">
+		<Text>Command DDIC_Tools</Text>
+		<Description>Some description for DDIC_Tools</Description>
+		<Assembly>DDIC_Tools.dll</Assembly>
+		<FullClassName>DDIC_Tools.ImportSchedule</FullClassName>
+		<ClientId>587AD1A3-E99A-4DB3-9115-D4346AAB53E2</ClientId>
+		<VendorId>com.typepad.thebuildingcoder</VendorId>
+		<VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+	</AddIn>
+	<AddIn Type="Command">
+		<Text>Command DDIC_Tools</Text>
+		<Description>Some description for DDIC_Tools</Description>
+		<Assembly>DDIC_Tools.dll</Assembly>
+		<FullClassName>DDIC_Tools.ExportSchedule</FullClassName>
+		<ClientId>3F7AB8D6-33EA-4EAF-B93C-C9CC191EFD1D</ClientId>
+		<VendorId>com.typepad.thebuildingcoder</VendorId>
+		<VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+	</AddIn>
+	<AddIn Type="Command">
+		<Text>Command DDIC_Tools</Text>
+		<Description>Some description for DDIC_Tools</Description>
+		<Assembly>DDIC_Tools.dll</Assembly>
+		<FullClassName>DDIC_Tools.Command.EditTitleSchedule</FullClassName>
+		<ClientId>82A4B854-1A74-488C-879B-ABBFCA016B67</ClientId>
+		<VendorId>com.typepad.thebuildingcoder</VendorId>
+		<VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+	</AddIn>
+	<AddIn Type="Command">
+		<Text>Command DDIC_Tools</Text>
+		<Description>Some description for DDIC_Tools</Description>
+		<Assembly>DDIC_Tools.dll</Assembly>
+		<FullClassName>DDIC_Tools.Command.ImportFolderImage</FullClassName>
+		<ClientId>F19CB2CC-2895-48D9-AC02-E7D1A0BEF568</ClientId>
+		<VendorId>com.typepad.thebuildingcoder</VendorId>
+		<VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+	</AddIn>
+	<AddIn Type="Application">
+		<Name>Application DDIC_Tools</Name>
+		<Assembly>DDIC_Tools.dll</Assembly>
+		<FullClassName>DDIC_Tools.App</FullClassName>
+		<ClientId>7F897C84-4F8E-47EA-B722-BEFDD5181127</ClientId>
+		<VendorId>com.typepad.thebuildingcoder</VendorId>
+		<VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+	</AddIn>
+</RevitAddIns>
