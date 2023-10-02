@@ -41,10 +41,15 @@ namespace DDIC_Tools
             IList<Element> schedules = new FilteredElementCollector(Doc)
                 .OfCategory(BuiltInCategory.OST_Schedules)
                 .ToElements();
-            Element sche1 = schedules[0];
-            foreach (Parameter parameter in sche1.GetOrderedParameters())
+
+            if (schedules.Count > 0)
             {
-                cbCategory.Items.Add(parameter.Definition.Name);
+                Element sche1 = schedules[0];
+
+                foreach (Parameter parameter in sche1.GetOrderedParameters())
+                {
+                    cbCategory.Items.Add(parameter.Definition.Name);
+                }
             }
         }
 

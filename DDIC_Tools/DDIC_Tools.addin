@@ -36,6 +36,33 @@
 		<VendorId>com.typepad.thebuildingcoder</VendorId>
 		<VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
 	</AddIn>
+	<AddIn Type="Command">
+		<Text>Command DDIC_Tools</Text>
+		<Description>Some description for DDIC_Tools</Description>
+		<Assembly>DDIC_Tools.dll</Assembly>
+		<FullClassName>DDIC_Tools.Command.FinishWallCreate</FullClassName>
+		<ClientId>FF8B954E-8198-4C79-A43C-A2524B0C5E10</ClientId>
+		<VendorId>com.typepad.thebuildingcoder</VendorId>
+		<VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+	</AddIn>
+	<AddIn Type="Command">
+		<Text>Command DDIC_Tools</Text>
+		<Description>Some description for DDIC_Tools</Description>
+		<Assembly>DDIC_Tools.dll</Assembly>
+		<FullClassName>DDIC_Tools.Command.CopyFilters</FullClassName>
+		<ClientId>F12230D5-9B71-41CF-9348-B5A9D13E91F7</ClientId>
+		<VendorId>com.typepad.thebuildingcoder</VendorId>
+		<VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+	</AddIn>
+	<AddIn Type="Command">
+		<Text>Command DDIC_Tools</Text>
+		<Description>Some description for DDIC_Tools</Description>
+		<Assembly>DDIC_Tools.dll</Assembly>
+		<FullClassName>DDIC_Tools.Command.CopyElementCAD</FullClassName>
+		<ClientId>B8680941-9497-4F9F-A77F-72A0AC31DB87</ClientId>
+		<VendorId>com.typepad.thebuildingcoder</VendorId>
+		<VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+	</AddIn>
 	<AddIn Type="Application">
 		<Name>Application DDIC_Tools</Name>
 		<Assembly>DDIC_Tools.dll</Assembly>

@@ -60,9 +60,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Command\CopyElementCAD.cs" />
+    <Compile Include="Command\CopyFilters.cs" />
     <Compile Include="Command\EditTitleSchedule.cs" />
     <Compile Include="Command\ExportSchedule.cs" />
+    <Compile Include="Command\FinishWallCreate.cs" />
     <Compile Include="Command\ImportFolderImage.cs" />
+    <Compile Include="ComponentFuncs\CommonFunctions.cs" />
+    <Compile Include="Data\DataCopyFilter.cs" />
+    <Compile Include="Data\DataWallType.cs" />
+    <Compile Include="FormEventHandler\CopyBlockCAD.cs" />
+    <Compile Include="FormEventHandler\FinishWallHandler.cs" />
+    <Compile Include="FormUI\FormChooseBlock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUI\FormChooseBlock.Designer.cs">
+      <DependentUpon>FormChooseBlock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUI\FormCopyFilters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUI\FormCopyFilters.Designer.cs">
+      <DependentUpon>FormCopyFilters.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUI\FormExportSchedule.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +96,12 @@
       <DependentUpon>FormEditTitleSchedule.cs</DependentUpon>
     </Compile>
     <Compile Include="Command\ImportSchedule.cs" />
+    <Compile Include="FormUI\FormFinishWall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUI\FormFinishWall.Designer.cs">
+      <DependentUpon>FormFinishWall.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUI\FormImportSchedule.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +114,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SelectionFilter\CopyBlockFilter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DDIC_Tools.addin" />
@@ -97,8 +124,17 @@
     <Content Include="Resources\Import.png" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormUI\FormChooseBlock.resx">
+      <DependentUpon>FormChooseBlock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUI\FormCopyFilters.resx">
+      <DependentUpon>FormCopyFilters.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormUI\FormExportSchedule.resx">
       <DependentUpon>FormExportSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUI\FormFinishWall.resx">
+      <DependentUpon>FormFinishWall.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUI\FormImportSchedule.resx">
       <DependentUpon>FormImportSchedule.cs</DependentUpon>
@@ -113,8 +149,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>if exist "$(AppData)\Autodesk\REVIT\Addins\2022" copy "$(ProjectDir)*.addin" "$(AppData)\Autodesk\REVIT\Addins\2022"
-if exist "$(AppData)\Autodesk\REVIT\Addins\2022" copy "$(ProjectDir)$(OutputPath)*.dll" "$(AppData)\Autodesk\REVIT\Addins\2022"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
