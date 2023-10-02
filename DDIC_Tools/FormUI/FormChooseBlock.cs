@@ -40,40 +40,56 @@ namespace DDIC_Tools.FormUI
 
         private void FormChooseBlock_Load(object sender, EventArgs e)
         {
-            GeometryElement geoElem = eleBlock.get_Geometry(new Options());
-
-            if (geoElem != null)
+            try
             {
-                foreach (GeometryInstance geoObj in geoElem)
+                GeometryElement geoElem = eleBlock.get_Geometry(new Options());
+
+                if (geoElem != null)
                 {
-                    Transform transform = geoObj.Transform;
-                    GeometryElement instance = geoObj.SymbolGeometry;
-
-                    if (instance != null)
+                    foreach (GeometryInstance geoObj in geoElem)
                     {
-                        foreach (GeometryInstance inst in instance)
+
+                        Transform transform = geoObj.Transform;
+                        GeometryElement instance = geoObj.SymbolGeometry;
+
+                        if (instance != null)
                         {
-
-                            XYZ point = transform.OfPoint(inst.Transform.Origin);
-                            Points.Add(CommonFunctions.ToPoint(point));
-
-                            double rotation = Math.Abs(UnitUtils.ConvertFromInternalUnits
-                                (inst.Transform.BasisX.AngleOnPlaneTo(XYZ.BasisX, XYZ.BasisZ),
-                                UnitTypeId.Degrees) - 360);
-
-                            if (Math.Round(rotation, 3) == 360)
+                            try
                             {
-                                rotation = 0;
+                                foreach (var item in instance)
+                                {
+                                    if (item is GeometryInstance inst)
+                                    {
+                                        XYZ point = transform.OfPoint(inst.Transform.Origin);
+                                        Points.Add(CommonFunctions.ToPoint(point));
+
+                                        double rotation = Math.Abs(UnitUtils.ConvertFromInternalUnits
+                                            (inst.Transform.BasisX.AngleOnPlaneTo(XYZ.BasisX, XYZ.BasisZ),
+                                            UnitTypeId.Degrees) - 360);
+
+                                        if (Math.Round(rotation, 3) == 360)
+                                        {
+                                            rotation = 0;
+                                        }
+
+                                        Rotations.Add(Math.Round(rotation, 3));
+
+                                        Blocks.Add(inst.Symbol.Name.Split(new string[] { ".dwg." }, StringSplitOptions.None).Last());
+                                    }
+                                }
                             }
-
-                            Rotations.Add(Math.Round(rotation, 3));
-
-                            Blocks.Add(inst.Symbol.Name.Split(new string[] { ".dwg." }, StringSplitOptions.None).Last());
+                            catch
+                            {
+                                continue;
+                            }
                         }
                     }
                 }
             }
+            catch (Exception ex)
+            {
 
+            }
 
             if (Blocks.Count > 0)
             {
