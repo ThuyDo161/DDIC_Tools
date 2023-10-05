@@ -109,9 +109,9 @@ namespace DDIC_Tools.FormUI
                             }
                         }
 
-                        TaskDialog.Show("Thông báo", "Copy filters thành công!");
-                        this.Close();
                     }
+                    TaskDialog.Show("Thông báo", "Copy filters thành công!");
+                    this.Close();
                 }
             }
             catch (Exception ex)

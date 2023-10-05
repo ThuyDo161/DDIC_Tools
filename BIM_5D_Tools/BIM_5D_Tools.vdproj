@@ -21,6 +21,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_0C0DB2F368E64B55B22468193C8B13EB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_13205E851D0246559A38538E1CE80A40"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -69,14 +75,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_EC0B49ACAAAA4A858F3119011CBA1D1F"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_EC0B49ACAAAA4A858F3119011CBA1D1F"
+        "OwnerKey" = "8:_0C0DB2F368E64B55B22468193C8B13EB"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -180,6 +180,37 @@
             "TargetName" = "8:PackageContents.xml"
             "Tag" = "8:"
             "Folder" = "8:_214C7BEFD6F6427C8ED3E7F566DCC8D7"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0C0DB2F368E64B55B22468193C8B13EB"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:DDIC_Tools, Version=2022.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_0C0DB2F368E64B55B22468193C8B13EB"
+                    {
+                    "Name" = "8:DDIC_Tools.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:C:\\ProgramData\\Autodesk\\ApplicationPlugins\\BIM_5D_Tools.bundle\\Contents\\2022\\DDIC_Tools.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_5B8DBDEFC9804DA4B55738EC2CBD1E99"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -340,37 +371,6 @@
             "TargetName" = "8:FinishWall.png"
             "Tag" = "8:"
             "Folder" = "8:_CAC215C09C9D47A9A4EFC1B2052916FA"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_EC0B49ACAAAA4A858F3119011CBA1D1F"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:DDIC_Tools, Version=2022.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_EC0B49ACAAAA4A858F3119011CBA1D1F"
-                    {
-                    "Name" = "8:DDIC_Tools.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:C:\\ProgramData\\Autodesk\\ApplicationPlugins\\BIM_5D_Tools.bundle\\Contents\\2022\\DDIC_Tools.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_5B8DBDEFC9804DA4B55738EC2CBD1E99"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
