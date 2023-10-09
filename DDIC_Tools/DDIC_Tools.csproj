@@ -62,12 +62,14 @@
     <Compile Include="App.cs" />
     <Compile Include="Command\CopyElementCAD.cs" />
     <Compile Include="Command\CopyFilters.cs" />
+    <Compile Include="Command\CreateBeam.cs" />
     <Compile Include="Command\EditTitleSchedule.cs" />
     <Compile Include="Command\ExportSchedule.cs" />
     <Compile Include="Command\FinishWallCreate.cs" />
     <Compile Include="Command\ImportFolderImage.cs" />
     <Compile Include="ComponentFuncs\CommonFunctions.cs" />
     <Compile Include="Data\DataCopyFilter.cs" />
+    <Compile Include="Data\DataCreateBeam.cs" />
     <Compile Include="Data\DataWallType.cs" />
     <Compile Include="FormEventHandler\CopyBlockCAD.cs" />
     <Compile Include="FormEventHandler\FinishWallHandler.cs" />
@@ -82,6 +84,12 @@
     </Compile>
     <Compile Include="FormUI\FormCopyFilters.Designer.cs">
       <DependentUpon>FormCopyFilters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUI\FormCreateBeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUI\FormCreateBeam.Designer.cs">
+      <DependentUpon>FormCreateBeam.cs</DependentUpon>
     </Compile>
     <Compile Include="FormUI\FormExportSchedule.cs">
       <SubType>Form</SubType>
@@ -115,6 +123,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="SelectionFilter\CopyBlockFilter.cs" />
+    <Compile Include="SelectionFilter\DoorAndWindowFilter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DDIC_Tools.addin" />
@@ -129,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUI\FormCopyFilters.resx">
       <DependentUpon>FormCopyFilters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUI\FormCreateBeam.resx">
+      <DependentUpon>FormCreateBeam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUI\FormExportSchedule.resx">
       <DependentUpon>FormExportSchedule.cs</DependentUpon>

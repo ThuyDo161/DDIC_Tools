@@ -63,6 +63,15 @@
 		<VendorId>com.typepad.thebuildingcoder</VendorId>
 		<VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
 	</AddIn>
+	<AddIn Type="Command">
+		<Text>Command DDIC_Tools</Text>
+		<Description>Some description for DDIC_Tools</Description>
+		<Assembly>DDIC_Tools.dll</Assembly>
+		<FullClassName>DDIC_Tools.Command.CreateBeam</FullClassName>
+		<ClientId>95334156-FB1A-42D1-892A-BCFB6158AF1A</ClientId>
+		<VendorId>com.typepad.thebuildingcoder</VendorId>
+		<VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+	</AddIn>
 	<AddIn Type="Application">
 		<Name>Application DDIC_Tools</Name>
 		<Assembly>DDIC_Tools.dll</Assembly>

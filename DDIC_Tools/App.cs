@@ -23,6 +23,7 @@ namespace DDIC_Tools
             string panelName2 = "Wall";
             string panelName3 = "Views";
             string panelName4 = "Modify";
+            string panelName5 = "Structure Framing";
 
             a.CreateRibbonTab(tabName);
 
@@ -31,6 +32,7 @@ namespace DDIC_Tools
             var panel2 = a.CreateRibbonPanel(tabName, panelName2);
             var panel3 = a.CreateRibbonPanel(tabName, panelName3);
             var panel4 = a.CreateRibbonPanel(tabName, panelName4);
+            var panel5 = a.CreateRibbonPanel(tabName, panelName5);
 
             #region Button tạo bảng thống kê từ file txt
             //BitmapImage image = new BitmapImage(new Uri(@"C:\Users\Administrator\Documents\DDIC\DDIC_Tools\DDIC_Tools\Resources\Import.png"));
@@ -107,6 +109,16 @@ namespace DDIC_Tools
             btnCopyEleBlock.ToolTip = "Block CAD to Element";
 
             var btn7 = panel4.AddItem(btnCopyEleBlock) as PushButton;
+            #endregion
+
+            #region Tạo lanh tô
+            BitmapImage imgCreateBeam = new BitmapImage(new Uri(@"C:\ProgramData\Autodesk\ApplicationPlugins\BIM_5D_Tools.bundle\Contents\Resources\Lanhto.png"));
+            var btnCreateBeam = new PushButtonData("btnCreateBeam", "Tạo lanh tô", Assembly.GetExecutingAssembly().Location,
+                "DDIC_Tools.Command.CreateBeam");
+            btnCreateBeam.LargeImage = imgCreateBeam;
+            btnCreateBeam.ToolTip = "Tạo lanh tô cho cửa";
+
+            var btn8 = panel5.AddItem(btnCreateBeam) as PushButton;
             #endregion
 
             return Result.Succeeded;
