@@ -53,16 +53,26 @@ namespace DDIC_Tools.FormUI
                     }
                 }
 
+                List<DataCopyFilter> items = new List<DataCopyFilter>();
+
                 foreach (Element elem in views)
                 {
-                    DataCopyFilter data = new DataCopyFilter();
-                    data.Id = elem.Id;
-                    data.Name = elem.Name;
-
                     if (elem.Id != doc.ActiveView.Id)
                     {
-                        cklsView.Items.Add(data);
+                        DataCopyFilter data = new DataCopyFilter();
+                        data.Id = elem.Id;
+                        data.Name = elem.Name;
+                        items.Add(data);
                     }
+                }
+
+                List<DataCopyFilter> sortedItems = items.OrderBy(item => item.Name).ToList();
+
+                cklsView.Items.Clear();
+
+                foreach (DataCopyFilter item in sortedItems)
+                {
+                    cklsView.Items.Add(item);
                 }
             }
         }
