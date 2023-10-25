@@ -90,7 +90,7 @@ namespace DDIC_Tools
 
             var btn5 = panel2.AddItem(btnFinishWall) as PushButton;
             #endregion
-            
+
             #region Copy filters views
             BitmapImage imgFilter = new BitmapImage(new Uri(@"C:\ProgramData\Autodesk\ApplicationPlugins\BIM_5D_Tools.bundle\Contents\Resources\CopyFilter.png"));
             var btnFilter = new PushButtonData("btnCopyFilter", "Copy Filters", Assembly.GetExecutingAssembly().Location,
@@ -124,7 +124,7 @@ namespace DDIC_Tools
             #region Button thêm số thứ tự trong bảng thống kê
             BitmapImage imageAddNumber = new BitmapImage(new Uri(@"C:\ProgramData\Autodesk\ApplicationPlugins\BIM_5D_Tools.bundle\Contents\Resources\numbering.png"));
             PushButtonData btnAddNumber = new PushButtonData("btnAddNumber", "Thêm STT", Assembly.GetExecutingAssembly().Location,
-                "DDIC_Tools.AddNumberSchedule");
+                "DDIC_Tools.Command.AddNumberSchedule");
             btnAddNumber.ToolTip = "Thêm STT trong bảng thống kê";
             btnAddNumber.LargeImage = imageAddNumber;
 
