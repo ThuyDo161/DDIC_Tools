@@ -2,7 +2,7 @@
 <RevitAddIns>
 	<AddIn Type="Command">
 		<Text>Command DDIC_Tools</Text>
-		<Description>Some description for DDIC_Tools</Description>
+		<Description>Import Schedule</Description>
 		<Assembly>DDIC_Tools.dll</Assembly>
 		<FullClassName>DDIC_Tools.ImportSchedule</FullClassName>
 		<ClientId>587AD1A3-E99A-4DB3-9115-D4346AAB53E2</ClientId>
@@ -11,7 +11,7 @@
 	</AddIn>
 	<AddIn Type="Command">
 		<Text>Command DDIC_Tools</Text>
-		<Description>Some description for DDIC_Tools</Description>
+		<Description>Export Schedule</Description>
 		<Assembly>DDIC_Tools.dll</Assembly>
 		<FullClassName>DDIC_Tools.ExportSchedule</FullClassName>
 		<ClientId>3F7AB8D6-33EA-4EAF-B93C-C9CC191EFD1D</ClientId>
@@ -20,7 +20,7 @@
 	</AddIn>
 	<AddIn Type="Command">
 		<Text>Command DDIC_Tools</Text>
-		<Description>Some description for DDIC_Tools</Description>
+		<Description>Edit Title Schedule</Description>
 		<Assembly>DDIC_Tools.dll</Assembly>
 		<FullClassName>DDIC_Tools.Command.EditTitleSchedule</FullClassName>
 		<ClientId>82A4B854-1A74-488C-879B-ABBFCA016B67</ClientId>
@@ -29,7 +29,7 @@
 	</AddIn>
 	<AddIn Type="Command">
 		<Text>Command DDIC_Tools</Text>
-		<Description>Some description for DDIC_Tools</Description>
+		<Description>Import Folder Image</Description>
 		<Assembly>DDIC_Tools.dll</Assembly>
 		<FullClassName>DDIC_Tools.Command.ImportFolderImage</FullClassName>
 		<ClientId>F19CB2CC-2895-48D9-AC02-E7D1A0BEF568</ClientId>
@@ -38,7 +38,7 @@
 	</AddIn>
 	<AddIn Type="Command">
 		<Text>Command DDIC_Tools</Text>
-		<Description>Some description for DDIC_Tools</Description>
+		<Description>Finish Wall Create</Description>
 		<Assembly>DDIC_Tools.dll</Assembly>
 		<FullClassName>DDIC_Tools.Command.FinishWallCreate</FullClassName>
 		<ClientId>FF8B954E-8198-4C79-A43C-A2524B0C5E10</ClientId>
@@ -47,7 +47,7 @@
 	</AddIn>
 	<AddIn Type="Command">
 		<Text>Command DDIC_Tools</Text>
-		<Description>Some description for DDIC_Tools</Description>
+		<Description>Copy Filters</Description>
 		<Assembly>DDIC_Tools.dll</Assembly>
 		<FullClassName>DDIC_Tools.Command.CopyFilters</FullClassName>
 		<ClientId>F12230D5-9B71-41CF-9348-B5A9D13E91F7</ClientId>
@@ -56,7 +56,7 @@
 	</AddIn>
 	<AddIn Type="Command">
 		<Text>Command DDIC_Tools</Text>
-		<Description>Some description for DDIC_Tools</Description>
+		<Description>Copy Element CAD</Description>
 		<Assembly>DDIC_Tools.dll</Assembly>
 		<FullClassName>DDIC_Tools.Command.CopyElementCAD</FullClassName>
 		<ClientId>B8680941-9497-4F9F-A77F-72A0AC31DB87</ClientId>
@@ -65,10 +65,19 @@
 	</AddIn>
 	<AddIn Type="Command">
 		<Text>Command DDIC_Tools</Text>
-		<Description>Some description for DDIC_Tools</Description>
+		<Description>Create beam</Description>
 		<Assembly>DDIC_Tools.dll</Assembly>
 		<FullClassName>DDIC_Tools.Command.CreateBeam</FullClassName>
 		<ClientId>95334156-FB1A-42D1-892A-BCFB6158AF1A</ClientId>
+		<VendorId>com.typepad.thebuildingcoder</VendorId>
+		<VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+	</AddIn>
+	<AddIn Type="Command">
+		<Text>Command DDIC_Tools</Text>
+		<Description>Add number to schedule</Description>
+		<Assembly>DDIC_Tools.dll</Assembly>
+		<FullClassName>DDIC_Tools.Command.AddNumberSchedule</FullClassName>
+		<ClientId>E55AA4C7-2F1A-4012-951A-956B4B2715B9</ClientId>
 		<VendorId>com.typepad.thebuildingcoder</VendorId>
 		<VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
 	</AddIn>

@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Command\AddNumberSchedule.cs" />
     <Compile Include="Command\CopyElementCAD.cs" />
     <Compile Include="Command\CopyFilters.cs" />
     <Compile Include="Command\CreateBeam.cs" />

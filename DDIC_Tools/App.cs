@@ -121,6 +121,16 @@ namespace DDIC_Tools
             var btn8 = panel5.AddItem(btnCreateBeam) as PushButton;
             #endregion
 
+            #region Button thêm số thứ tự trong bảng thống kê
+            BitmapImage imageAddNumber = new BitmapImage(new Uri(@"C:\ProgramData\Autodesk\ApplicationPlugins\BIM_5D_Tools.bundle\Contents\Resources\numbering.png"));
+            PushButtonData btnAddNumber = new PushButtonData("btnAddNumber", "Thêm STT", Assembly.GetExecutingAssembly().Location,
+                "DDIC_Tools.AddNumberSchedule");
+            btnAddNumber.ToolTip = "Thêm STT trong bảng thống kê";
+            btnAddNumber.LargeImage = imageAddNumber;
+
+            PushButton btn9 = panel.AddItem(btnAddNumber) as PushButton;
+            #endregion
+
             return Result.Succeeded;
         }
 
