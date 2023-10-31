@@ -120,7 +120,7 @@ namespace DDIC_Tools.FormUI
                         }
 
                     }
-                    TaskDialog.Show("Thông báo", "Copy filters thành công!");
+                    TaskDialog.Show("Notification", "Copy filters successfully!");
                     this.Close();
                 }
             }

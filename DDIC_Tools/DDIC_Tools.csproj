@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="RevitAPI">
       <HintPath>$(ProgramW6432)\Autodesk\Revit 2022\RevitAPI.dll</HintPath>
       <Private>False</Private>
@@ -55,23 +56,31 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="Command\AddNumberSchedule.cs" />
     <Compile Include="Command\CopyElementCAD.cs" />
     <Compile Include="Command\CopyFilters.cs" />
     <Compile Include="Command\CreateBeam.cs" />
     <Compile Include="Command\EditTitleSchedule.cs" />
     <Compile Include="Command\ExportSchedule.cs" />
     <Compile Include="Command\FinishWallCreate.cs" />
+    <Compile Include="Command\FormWorkBeam.cs" />
     <Compile Include="Command\ImportFolderImage.cs" />
+    <Compile Include="ComponentFuncs\DataTools.cs" />
     <Compile Include="ComponentFuncs\CommonFunctions.cs" />
+    <Compile Include="ComponentFuncs\ElementCollect.cs" />
+    <Compile Include="ComponentFuncs\GeometeryTools.cs" />
+    <Compile Include="ComponentFuncs\SupportFunctions.cs" />
+    <Compile Include="ComponentFuncs\VisibleElementContext.cs" />
     <Compile Include="Data\DataCopyFilter.cs" />
     <Compile Include="Data\DataCreateBeam.cs" />
     <Compile Include="Data\DataWallType.cs" />
+    <Compile Include="Data\ElementContainer.cs" />
+    <Compile Include="Data\FormworkFace.cs" />
     <Compile Include="FormEventHandler\CopyBlockCAD.cs" />
     <Compile Include="FormEventHandler\FinishWallHandler.cs" />
     <Compile Include="FormUI\FormChooseBlock.cs">
@@ -123,8 +132,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ComponentFuncs\ConvertValue.cs" />
     <Compile Include="SelectionFilter\CopyBlockFilter.cs" />
     <Compile Include="SelectionFilter\DoorAndWindowFilter.cs" />
+    <Compile Include="SelectionFilter\RoomSelectionFilter.cs" />
+    <Compile Include="Data\FinishWallSetup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DDIC_Tools.addin" />
@@ -160,6 +172,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

@@ -54,13 +54,13 @@ namespace DDIC_Tools.FormUI
 
             Button btnDel = new Button();
             btnDel.Name = "btnDel" + (index + 1);
-            btnDel.Text = "Xoá";
+            btnDel.Text = "Delete";
             btnDel.Location = new System.Drawing.Point(610, 30);
             btnDel.Size = new Size(70, 31);
             btnDel.Click += Button_Click;
 
             Label label1 = new Label();
-            label1.Text = "Nhập tên cột " + (col + 1);
+            label1.Text = "Enter the column name " + (col + 1);
             label1.Location = new System.Drawing.Point(5, 10);
 
             System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
@@ -164,11 +164,11 @@ namespace DDIC_Tools.FormUI
                             }
                         }
 
-                        TaskDialog.Show("Thông báo", "Chỉnh sửa tiêu đề thành công!");
+                        TaskDialog.Show("Notification", "Edit title header of the schedule successfully!");
                     }
                     catch (Exception ex)
                     {
-                        TaskDialog.Show("Thông báo", ex.Message);
+                        TaskDialog.Show("Notification", ex.Message);
                     }
                 }
             }

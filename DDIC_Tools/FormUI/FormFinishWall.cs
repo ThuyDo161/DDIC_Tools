@@ -3,9 +3,9 @@ using Autodesk.Revit.DB.Architecture;
 using Autodesk.Revit.UI;
 using DDIC_Tools.Data;
 using DDIC_Tools.FormEventHandler;
+using DDIC_Tools.ComponentFuncs;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -25,6 +25,8 @@ namespace DDIC_Tools.FormUI
 
         private UIDocument uidoc;
 
+        private FinishWallSetup FinishWallSetup = new FinishWallSetup();
+
         public FormFinishWall(UIDocument uidoc, Document doc)
         {
             InitializeComponent();
@@ -32,196 +34,181 @@ namespace DDIC_Tools.FormUI
             this.doc = doc;
         }
 
+        private void FormFinishWall_Load(object sender, EventArgs e)
+        {
+            IEnumerable<WallType> wallTypes = new FilteredElementCollector(doc).OfClass(typeof(WallType)).Select(elem => new
+            {
+                elem = elem,
+                type = elem as WallType
+            }).Where(p => p.type.Kind == 0).Select(p => p.type);
+
+            lstWallType.DataSource = wallTypes.ToList();
+            lstWallType.DisplayMember = "Name";
+            lstWallType.SelectedItem = lstWallType.Items[lstWallType.Items.Count - 1];
+        }
+
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (rdAll.Checked == true)
+            if (ConvertValue.GetValueFromString(txtHeight.Text, doc.GetUnits()).HasValue)
             {
-                IList<Element> elements = new FilteredElementCollector(doc)
-                     .OfCategory(BuiltInCategory.OST_Rooms)
-                     .WhereElementIsNotElementType()
-                     .Cast<Element>()
-                     .ToList();
+                this.FinishWallSetup.JoinWall = ckJoinWall.Checked;
+                this.FinishWallSetup.BoardHeight = ConvertValue.GetValueFromString(txtHeight.Text, doc.GetUnits()).Value;
+                if (lstWallType.SelectedItems == null) return;
+                this.FinishWallSetup.SelectedWallType = lstWallType.SelectedItems[0] as WallType;
 
-                if (elements.Count > 0)
+                if (rdAll.Checked)
                 {
-                    foreach (Element element in elements)
+                    this.FinishWallSetup.SelectedRooms = SelectRooms().ToList();
+
+                    try
                     {
-                        ElementId id = element.Id;
-
-                        uidoc.Selection.SetElementIds(new List<ElementId> { id });
-
-                        Room room = element as Room;
-
-                        FinishWall(doc, room, element);
+                        CreateFinishWall();
+                        this.Close();
+                        TaskDialog.Show("Notification", "Create finish wall successfully!", TaskDialogCommonButtons.Close, TaskDialogResult.Close);
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                else
+                {
+                    _eventHandler = new FinishWallHandler(this.FinishWallSetup);
+                    _externalEvent = ExternalEvent.Create(_eventHandler);
 
-                    TaskDialog.Show("Thông báo", "Tạo lớp trát thành công!");
+                    _externalEvent.Raise();
 
                     this.Close();
                 }
             }
             else
             {
-                DataWallType selectedData = (DataWallType)lstWallType.SelectedItem;
-                string height = txtHeight.Text;
-
-                _eventHandler = new FinishWallHandler(selectedData, height);
-                _externalEvent = ExternalEvent.Create(_eventHandler);
-
-                _externalEvent.Raise();
-
-                this.Close();
+                TaskDialog.Show("Create skirting board", "Please enter a height value for the skirting board!", TaskDialogCommonButtons.Close, TaskDialogResult.Close);
+                this.Activate();
             }
         }
 
-        public void FinishWall(Document doc, Room room, Element element)
+        private IEnumerable<Room> SelectRooms()
         {
-            SpatialElementBoundaryOptions options = new SpatialElementBoundaryOptions();
-            options.SpatialElementBoundaryLocation = SpatialElementBoundaryLocation.Finish;
+            IEnumerable<Room> source = null;
 
-            IList<IList<BoundarySegment>> boundaries = room.GetBoundarySegments(options);
-
-            List<Curve> boundaryLines = new List<Curve>();
-
-            List<Curve> lines = new List<Curve>();
-
-            List<ElementId> wallIds = new List<ElementId>();
-
-            double offsetDistance = 5 / 304.8;
-
-            // Duyệt qua các đoạn đường biên và lưu chúng vào danh sách
-            foreach (IList<BoundarySegment> boundary in boundaries)
+            source = new FilteredElementCollector(doc, doc.ActiveView.Id).OfClass(typeof(SpatialElement)).WhereElementIsNotElementType().Select(elem => new
             {
-                foreach (BoundarySegment segment in boundary)
-                {
-                    Curve curve = segment.GetCurve();
-                    boundaryLines.Add(curve);
-                }
-            }
+                elem = elem,
+                room = elem as Room
+            }).Select(p => p.room);
 
-            foreach (Curve curve in boundaryLines)
-            {
-                Curve offsetCurve = curve.CreateOffset(offsetDistance, new XYZ(0, 0, -1));
-
-                lines.Add(offsetCurve);
-            }
-
-            using (Transaction trans = new Transaction(doc, "Create wall"))
-            {
-                trans.Start();
-
-                double height = double.Parse(txtHeight.Text) / 304.8;
-
-                DataWallType selectedData = (DataWallType)lstWallType.SelectedItem;
-
-                foreach (Curve curve in lines)
-                {
-                    Wall wall = Wall.Create(doc, curve, selectedData.Id, element.LevelId, height, selectedData.Width / 2, false, false);
-
-                    wallIds.Add(wall.Id);
-                }
-
-                trans.Commit();
-            }
-
-            List<FamilyInstance> doors = new FilteredElementCollector(doc)
-                .OfCategory(BuiltInCategory.OST_Doors)
-                .OfClass(typeof(FamilyInstance))
-                .Cast<FamilyInstance>()
-                .ToList();
-
-            if (doors.Count > 0)
-            {
-                foreach (FamilyInstance door in doors)
-                {
-                    ElementId hostId = door.Host.Id;
-                    Element hostElement = doc.GetElement(hostId);
-
-                    if (door.FromRoom != null)
-                    {
-                        if (door.FromRoom.Id == room.Id)
-                        {
-                            JoinWall(doc, wallIds, hostElement);
-                        }
-                    }
-                    else if (door.Room != null)
-                    {
-                        if (door.Room.Id == room.Id)
-                        {
-                            JoinWall(doc, wallIds, hostElement);
-                        }
-                    }
-                }
-            }
-
-            List<FamilyInstance> windows = new FilteredElementCollector(doc)
-                .OfCategory(BuiltInCategory.OST_Windows)
-                .OfClass(typeof(FamilyInstance))
-                .Cast<FamilyInstance>()
-                .ToList();
-
-            if (windows.Count > 0)
-            {
-                foreach (FamilyInstance window in windows)
-                {
-                    ElementId hostId = window.Host.Id;
-                    Element hostElement = doc.GetElement(hostId);
-
-                    if (window.FromRoom != null)
-                    {
-                        if (window.FromRoom.Id == room.Id)
-                        {
-                            JoinWall(doc, wallIds, hostElement);
-                        }
-                    }
-                    else if (window.Room != null)
-                    {
-                        if (window.Room.Id == room.Id)
-                        {
-                            JoinWall(doc, wallIds, hostElement);
-                        }
-                    }
-                }
-            }
+            return source;
         }
 
-        public void JoinWall(Document doc, List<ElementId> wallIds, Element hostElement)
+        public void CreateFinishWall()
         {
-            foreach (ElementId id in wallIds)
+            Transaction tx = new Transaction(this.doc);
+            tx.Start("Create skirting board");
+
+            WallType newWallType = DuplicateWallType(this.FinishWallSetup.SelectedWallType, this.doc);
+            Dictionary<ElementId, ElementId> walls = CreateWalls(this.doc, FinishWallSetup.SelectedRooms, this.FinishWallSetup.BoardHeight, newWallType);
+
+            foreach (ElementId key in new List<ElementId>(walls.Keys))
             {
-                try
+                if (this.doc.GetElement(key) == null)
                 {
-                    Element ele = doc.GetElement(id);
-
-                    using (Transaction trans = new Transaction(doc, "Join wall"))
-                    {
-                        trans.Start();
-
-                        bool intersects = IsIntersect(ele, hostElement);
-
-                        if (intersects == true)
-                        {
-                            JoinGeometryUtils.JoinGeometry(doc, ele, hostElement);
-                        }
-
-                        trans.Commit();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    continue;
+                    walls.Remove(key);
                 }
             }
+
+            Element.ChangeTypeId(this.doc, walls.Keys, FinishWallSetup.SelectedWallType.Id);
+            if (this.FinishWallSetup.JoinWall)
+            {
+                JoinGeometry(this.doc, walls);
+            }
+
+            this.doc.Delete(newWallType.Id);
+
+            tx.Commit();
         }
 
-        public bool IsIntersect(Element ele, Element hostEle)
+        public WallType DuplicateWallType(WallType wallType, Document doc)
         {
-            BoundingBoxXYZ boundingBoxXYZ = ele.get_BoundingBox(null);
-            Outline outline = new Outline(boundingBoxXYZ.Min, boundingBoxXYZ.Max);
+            WallType wallType1 = new FilteredElementCollector(doc).OfClass(typeof(WallType)).Select(elem => new
+            {
+                elem = elem,
+                type = elem as WallType
+            }).Where(p => p.type.Kind == 0).Select(p => p.type).Select(o => o.Name).ToList().Contains("newWallTypeName") ? wallType.Duplicate("newWallTypeName2") as WallType : wallType.Duplicate("newWallTypeName") as WallType;
 
-            BoundingBoxIntersectsFilter filter = new BoundingBoxIntersectsFilter(outline);
+            CompoundStructure compoundStructure = wallType1.GetCompoundStructure();
+            IList<CompoundStructureLayer> layers = compoundStructure.GetLayers();
+            int num1 = 0;
 
-            return filter.PassesFilter(hostEle);
+            foreach (CompoundStructureLayer compoundStructureLayer in layers)
+            {
+                double num2 = compoundStructureLayer.Width * 2.0;
+
+                compoundStructure.SetLayerWidth(num1, num2);
+
+                ++num1;
+            }
+
+            wallType1.SetCompoundStructure(compoundStructure);
+
+            return wallType1;
+        }
+
+        public Dictionary<ElementId, ElementId> CreateWalls(Document doc, IEnumerable<Room> modelRooms, double height, WallType newWallType)
+        {
+            Dictionary<ElementId, ElementId> walls = new Dictionary<ElementId, ElementId>();
+
+            foreach (Room modelRoom in modelRooms)
+            {
+                ElementId levelId = modelRoom.LevelId;
+                IList<IList<BoundarySegment>> boundarySegments = modelRoom.GetBoundarySegments(new SpatialElementBoundaryOptions()
+                {
+                    SpatialElementBoundaryLocation = SpatialElementBoundaryLocation.Finish
+                });
+
+                if (boundarySegments != null)
+                {
+                    foreach (IList<BoundarySegment> boundarySegmentList in boundarySegments)
+                    {
+                        if (boundarySegmentList.Count != 0)
+                        {
+                            foreach (BoundarySegment boundarySegment in boundarySegmentList)
+                            {
+                                Element element = doc.GetElement(boundarySegment.ElementId);
+                                if (element != null)
+                                {
+                                    Category category = doc.Settings.Categories.get_Item(BuiltInCategory.OST_RoomSeparationLines);
+
+                                    if (element.Category.Id != category.Id)
+                                    {
+                                        Wall wall = Wall.Create(doc, boundarySegment.GetCurve(), newWallType.Id, levelId, height, 0.0, false, false);
+                                        wall.get_Parameter(BuiltInParameter.WALL_KEY_REF_PARAM).Set(2);
+                                        walls.Add(wall.Id, boundarySegment.ElementId);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            return walls;
+        }
+
+        public void JoinGeometry(Document doc, Dictionary<ElementId, ElementId> wallDictionary)
+        {
+            foreach (ElementId key in wallDictionary.Keys)
+            {
+                if (doc.GetElement(key) is Wall elem)
+                {
+                    elem.get_Parameter(BuiltInParameter.WALL_KEY_REF_PARAM).Set(3);
+
+                    if (doc.GetElement(wallDictionary[key]) is Wall element)
+                    {
+                        JoinGeometryUtils.JoinGeometry(doc, elem, element);
+                    }
+                }
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -229,22 +216,5 @@ namespace DDIC_Tools.FormUI
             this.Close();
         }
 
-        private void FormFinishWall_Load(object sender, EventArgs e)
-        {
-            FilteredElementCollector collector = new FilteredElementCollector(doc)
-                .OfClass(typeof(WallType));
-
-            foreach (WallType wallType in collector)
-            {
-                DataWallType data = new DataWallType();
-                data.Name = wallType.Name;
-                data.Id = wallType.Id;
-                data.Width = wallType.Width;
-
-                lstWallType.Items.Add(data);
-            }
-
-            lstWallType.SelectedIndex = lstWallType.Items.Count - 1;
-        }
     }
 }

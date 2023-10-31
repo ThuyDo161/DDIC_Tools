@@ -70,7 +70,7 @@ namespace DDIC_Tools.Command
 
             DeleteDuplicateImages(doc);
 
-            TaskDialog.Show("Thông báo", "Thêm ảnh thành công!");
+            TaskDialog.Show("Notification", "Import image to Revit successfully!");
         }
         #endregion xử lý thêm ảnh vào revit
 

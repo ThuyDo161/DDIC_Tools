@@ -225,14 +225,14 @@ namespace DDIC_Tools
                         File.WriteAllLines(filePath + ".txt", error);
                     }
 
-                    TaskDialog.Show("Thông báo", "Xuất file thành công! Tệp của bạn nằm ở " + selectedPath);
+                    TaskDialog.Show("Notification", "Export file successfully! Your file is located at " + selectedPath);
 
                     string fileDictionary = Path.GetDirectoryName(path);
                     System.Diagnostics.Process.Start("explorer.exe", fileDictionary);
                 }
                 catch (Exception ex)
                 {
-                    TaskDialog.Show("Thông báo", "Không tìm thấy file phù hợp!");
+                    TaskDialog.Show("Notification", "No suitable file found!");
                 }
             }
         }

@@ -37,10 +37,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.rdAll = new System.Windows.Forms.RadioButton();
+            this.ckJoinWall = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btnOK
             // 
+            this.btnOK.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnOK.FlatAppearance.BorderSize = 0;
+            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOK.Location = new System.Drawing.Point(1280, 733);
             this.btnOK.Margin = new System.Windows.Forms.Padding(4);
@@ -48,11 +52,14 @@
             this.btnOK.Size = new System.Drawing.Size(132, 41);
             this.btnOK.TabIndex = 17;
             this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(1441, 733);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
@@ -60,7 +67,7 @@
             this.btnCancel.Size = new System.Drawing.Size(132, 41);
             this.btnCancel.TabIndex = 16;
             this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // lstWallType
@@ -90,12 +97,12 @@
             // 
             this.txtHeight.BackColor = System.Drawing.Color.White;
             this.txtHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHeight.Location = new System.Drawing.Point(162, 77);
+            this.txtHeight.Location = new System.Drawing.Point(198, 77);
             this.txtHeight.Margin = new System.Windows.Forms.Padding(4);
             this.txtHeight.Name = "txtHeight";
-            this.txtHeight.Size = new System.Drawing.Size(1411, 23);
+            this.txtHeight.Size = new System.Drawing.Size(1375, 23);
             this.txtHeight.TabIndex = 13;
-            this.txtHeight.Text = "2000.0";
+            this.txtHeight.Text = "100.0";
             // 
             // label1
             // 
@@ -104,9 +111,9 @@
             this.label1.Location = new System.Drawing.Point(11, 80);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 17);
+            this.label1.Size = new System.Drawing.Size(179, 17);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Skirting board height:";
+            this.label1.Text = "Skirting board height (mm):";
             // 
             // radioButton1
             // 
@@ -130,12 +137,25 @@
             this.rdAll.Text = "All rooms in current view";
             this.rdAll.UseVisualStyleBackColor = true;
             // 
+            // ckJoinWall
+            // 
+            this.ckJoinWall.AutoSize = true;
+            this.ckJoinWall.Checked = true;
+            this.ckJoinWall.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckJoinWall.Location = new System.Drawing.Point(14, 744);
+            this.ckJoinWall.Name = "ckJoinWall";
+            this.ckJoinWall.Size = new System.Drawing.Size(119, 21);
+            this.ckJoinWall.TabIndex = 18;
+            this.ckJoinWall.Text = "Join Geometry";
+            this.ckJoinWall.UseVisualStyleBackColor = true;
+            // 
             // FormFinishWall
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1584, 791);
+            this.Controls.Add(this.ckJoinWall);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lstWallType);
@@ -147,7 +167,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FormFinishWall";
             this.Text = "Create skirting board";
@@ -167,5 +187,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton rdAll;
+        private System.Windows.Forms.CheckBox ckJoinWall;
     }
 }

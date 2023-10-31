@@ -40,12 +40,15 @@
             // 
             // btnEdit
             // 
+            this.btnEdit.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Location = new System.Drawing.Point(186, 460);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(314, 42);
             this.btnEdit.TabIndex = 17;
-            this.btnEdit.Text = "Chỉnh sửa tiêu đề";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Text = "Edit ";
+            this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // flowLayoutPanel
@@ -78,14 +81,16 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnAdd.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Location = new System.Drawing.Point(610, 30);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(70, 31);
             this.btnAdd.TabIndex = 12;
-            this.btnAdd.Text = "Thêm";
+            this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -106,7 +111,7 @@
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.flowLayoutPanel);
             this.Name = "FormEditTitleSchedule";
-            this.Text = "Chỉnh sửa tiêu đề các cột trong bảng thống kê";
+            this.Text = "Edit the title column of schedule";
             this.Load += new System.EventHandler(this.FormEditTitleSchedule_Load);
             this.flowLayoutPanel.ResumeLayout(false);
             this.grbSelect.ResumeLayout(false);

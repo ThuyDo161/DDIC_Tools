@@ -75,12 +75,15 @@
             // 
             // btnOK
             // 
+            this.btnOK.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnOK.FlatAppearance.BorderSize = 0;
+            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Location = new System.Drawing.Point(474, 502);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(105, 40);
             this.btnOK.TabIndex = 4;
             this.btnOK.Text = "Import";
-            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // FormChooseBlock
@@ -97,7 +100,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormChooseBlock";
             this.Text = "Import AutoCAD Blocks";
             this.Load += new System.EventHandler(this.FormChooseBlock_Load);

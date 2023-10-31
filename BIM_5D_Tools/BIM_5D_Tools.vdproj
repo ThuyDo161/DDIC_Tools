@@ -15,19 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_20F8CB560F4D46CBA0F9ADEB4F28BAF2"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_27557B7DF09140ABA98AF35514134C69"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_30BC4E5A751A43C59D9D7E8B15AC75B6"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -46,6 +34,12 @@
         "Entry"
         {
         "MsmKey" = "8:_448F0442049C4BD4903CF0C2348534B0"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4CE4650C84F14BEE86D82EA8349688E7"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -75,20 +69,20 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_BDB800D804154E2BB17D4D3CD6BF73F2"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_D4A5173925924576891574747F02397F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
+        "MsmKey" = "8:_DA171E2B02284BDDACE905D926CCF35F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_20F8CB560F4D46CBA0F9ADEB4F28BAF2"
+        "OwnerKey" = "8:_DA171E2B02284BDDACE905D926CCF35F"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -186,61 +180,10 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_20F8CB560F4D46CBA0F9ADEB4F28BAF2"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:DDIC_Tools, Version=2022.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_20F8CB560F4D46CBA0F9ADEB4F28BAF2"
-                    {
-                    "Name" = "8:DDIC_Tools.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:C:\\ProgramData\\Autodesk\\ApplicationPlugins\\BIM_5D_Tools.bundle\\Contents\\2022\\DDIC_Tools.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_63CB28F844F34254A35053C11FACD1CC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_27557B7DF09140ABA98AF35514134C69"
             {
             "SourcePath" = "8:C:\\ProgramData\\Autodesk\\ApplicationPlugins\\BIM_5D_Tools.bundle\\Contents\\Resources\\CopyElement.png"
             "TargetName" = "8:CopyElement.png"
-            "Tag" = "8:"
-            "Folder" = "8:_D0692B9C89A64CD6879B18F9D5D9D06F"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_30BC4E5A751A43C59D9D7E8B15AC75B6"
-            {
-            "SourcePath" = "8:C:\\ProgramData\\Autodesk\\ApplicationPlugins\\BIM_5D_Tools.bundle\\Contents\\Resources\\numbering.png"
-            "TargetName" = "8:numbering.png"
             "Tag" = "8:"
             "Folder" = "8:_D0692B9C89A64CD6879B18F9D5D9D06F"
             "Condition" = "8:"
@@ -303,6 +246,26 @@
             "TargetName" = "8:Lanhto.png"
             "Tag" = "8:"
             "Folder" = "8:_D0692B9C89A64CD6879B18F9D5D9D06F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4CE4650C84F14BEE86D82EA8349688E7"
+            {
+            "SourcePath" = "8:C:\\ProgramData\\Autodesk\\ApplicationPlugins\\BIM_5D_Tools.bundle\\Contents\\2022\\DDIC_Tools.addin"
+            "TargetName" = "8:DDIC_Tools.addin"
+            "Tag" = "8:"
+            "Folder" = "8:_63CB28F844F34254A35053C11FACD1CC"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -397,12 +360,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BDB800D804154E2BB17D4D3CD6BF73F2"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D4A5173925924576891574747F02397F"
             {
-            "SourcePath" = "8:C:\\ProgramData\\Autodesk\\ApplicationPlugins\\BIM_5D_Tools.bundle\\Contents\\2022\\DDIC_Tools.addin"
-            "TargetName" = "8:DDIC_Tools.addin"
+            "SourcePath" = "8:C:\\ProgramData\\Autodesk\\ApplicationPlugins\\BIM_5D_Tools.bundle\\Contents\\Resources\\CopyFilter.png"
+            "TargetName" = "8:CopyFilter.png"
             "Tag" = "8:"
-            "Folder" = "8:_63CB28F844F34254A35053C11FACD1CC"
+            "Folder" = "8:_D0692B9C89A64CD6879B18F9D5D9D06F"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -417,12 +380,23 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D4A5173925924576891574747F02397F"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DA171E2B02284BDDACE905D926CCF35F"
             {
-            "SourcePath" = "8:C:\\ProgramData\\Autodesk\\ApplicationPlugins\\BIM_5D_Tools.bundle\\Contents\\Resources\\CopyFilter.png"
-            "TargetName" = "8:CopyFilter.png"
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:DDIC_Tools, Version=2022.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_DA171E2B02284BDDACE905D926CCF35F"
+                    {
+                    "Name" = "8:DDIC_Tools.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:C:\\ProgramData\\Autodesk\\ApplicationPlugins\\BIM_5D_Tools.bundle\\Contents\\2022\\DDIC_Tools.dll"
+            "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_D0692B9C89A64CD6879B18F9D5D9D06F"
+            "Folder" = "8:_63CB28F844F34254A35053C11FACD1CC"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -515,15 +489,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:BIM_5D_Tools"
-        "ProductCode" = "8:{BE0D9354-01B5-453C-B53D-956AA2F3E4A2}"
-        "PackageCode" = "8:{92DE37ED-9079-48A7-A937-C4BE247B6C99}"
+        "ProductCode" = "8:{B61EA3DF-F195-4C38-A41E-2E1FD96053F4}"
+        "PackageCode" = "8:{50549E7A-BABD-4A0D-996F-6DDE4542AC81}"
         "UpgradeCode" = "8:{47E3DF02-39E1-46D1-99F7-E106FA3656E0}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.1"
+        "ProductVersion" = "8:1.0.2"
         "Manufacturer" = "8:Microsoft"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

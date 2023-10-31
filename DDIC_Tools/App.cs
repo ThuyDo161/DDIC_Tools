@@ -37,9 +37,9 @@ namespace DDIC_Tools
             #region Button tạo bảng thống kê từ file txt
             //BitmapImage image = new BitmapImage(new Uri(@"C:\Users\Administrator\Documents\DDIC\DDIC_Tools\DDIC_Tools\Resources\Import.png"));
             BitmapImage image = new BitmapImage(new Uri(@"C:\ProgramData\Autodesk\ApplicationPlugins\BIM_5D_Tools.bundle\Contents\Resources\Import.png"));
-            var btnImport = new PushButtonData("btnImport", "Tạo schedule", Assembly.GetExecutingAssembly().Location,
+            var btnImport = new PushButtonData("btnImport", "Create schedule", Assembly.GetExecutingAssembly().Location,
                 "DDIC_Tools.ImportSchedule");
-            btnImport.ToolTip = "Tạo schedule từ file txt";
+            btnImport.ToolTip = "Create schedule from file txt";
             btnImport.LargeImage = image;
             //btnImport.Image = image;
 
@@ -49,9 +49,9 @@ namespace DDIC_Tools
             #region Button xuất bảng thống kê theo cây thư mục
             //BitmapImage imgExport = new BitmapImage(new Uri(@"C:\Users\Administrator\Documents\DDIC\DDIC_Tools\DDIC_Tools\Resources\Export.png"));
             BitmapImage imgExport = new BitmapImage(new Uri(@"C:\ProgramData\Autodesk\ApplicationPlugins\BIM_5D_Tools.bundle\Contents\Resources\Export.png"));
-            var btnExport = new PushButtonData("btnExport", "Xuất schedule", Assembly.GetExecutingAssembly().Location,
+            var btnExport = new PushButtonData("btnExport", "Export schedule", Assembly.GetExecutingAssembly().Location,
                 "DDIC_Tools.ExportSchedule");
-            btnExport.ToolTip = "Xuất schedule theo cây thư mục";
+            btnExport.ToolTip = "Export schedule to directory tree";
             btnExport.LargeImage = imgExport;
             //btnExport.Image = imgExport;
 
@@ -61,9 +61,9 @@ namespace DDIC_Tools
             #region Tạo button chỉnh sửa tên column schedule
             //BitmapImage imgEdit = new BitmapImage(new Uri(@"C:\Users\Administrator\Documents\DDIC\DDIC_Tools\DDIC_Tools\Resources\Edit Heading.png"));
             BitmapImage imgEdit = new BitmapImage(new Uri(@"C:\ProgramData\Autodesk\ApplicationPlugins\BIM_5D_Tools.bundle\Contents\Resources\Edit Heading.png"));
-            var btnEdit = new PushButtonData("btnEdit", "Sửa tiêu đề", Assembly.GetExecutingAssembly().Location,
+            var btnEdit = new PushButtonData("btnEdit", "Edit Title", Assembly.GetExecutingAssembly().Location,
                 "DDIC_Tools.Command.EditTitleSchedule");
-            btnEdit.ToolTip = "Chỉnh sửa tiêu đề cột của bảng thống kê";
+            btnEdit.ToolTip = "Edit the column headers of the schedule";
             btnEdit.LargeImage = imgEdit;
             //btnEdit.Image = imgEdit;
 
@@ -73,9 +73,9 @@ namespace DDIC_Tools
             #region Tạo button import ảnh vào revit
             BitmapImage imgEditHeading = new BitmapImage(new Uri(@"C:\ProgramData\Autodesk\ApplicationPlugins\BIM_5D_Tools.bundle\Contents\Resources\Import Image.png"));
             //BitmapImage imgEditHeading = new BitmapImage(new Uri(@"C:\Users\Administrator\Documents\DDIC\DDIC_Tools\DDIC_Tools\Resources\Import Image.png"));
-            var btnEditHeading = new PushButtonData("btnEditHeading", "Thêm ảnh", Assembly.GetExecutingAssembly().Location,
+            var btnEditHeading = new PushButtonData("btnEditHeading", "Image", Assembly.GetExecutingAssembly().Location,
                 "DDIC_Tools.Command.ImportFolderImage");
-            btnEditHeading.ToolTip = "Thêm ảnh vào Revit từ folder";
+            btnEditHeading.ToolTip = "Import image to Revit from folder";
             btnEditHeading.LargeImage = imgEditHeading;
 
             var btn4 = panel1.AddItem(btnEditHeading) as PushButton;
@@ -83,9 +83,9 @@ namespace DDIC_Tools
 
             #region Tạo lớp trát cho room
             BitmapImage imgFinishWall = new BitmapImage(new Uri(@"C:\ProgramData\Autodesk\ApplicationPlugins\BIM_5D_Tools.bundle\Contents\Resources\FinishWall.png"));
-            var btnFinishWall = new PushButtonData("btnFinishWall", "Tạo lớp trát", Assembly.GetExecutingAssembly().Location,
+            var btnFinishWall = new PushButtonData("btnFinishWall", "Finish Wall", Assembly.GetExecutingAssembly().Location,
                 "DDIC_Tools.Command.FinishWallCreate");
-            btnFinishWall.ToolTip = "Tạo lớp trát cho tường của các rooms";
+            btnFinishWall.ToolTip = "Create finish wall to rooms";
             btnFinishWall.LargeImage = imgFinishWall;
 
             var btn5 = panel2.AddItem(btnFinishWall) as PushButton;
@@ -113,22 +113,12 @@ namespace DDIC_Tools
 
             #region Tạo lanh tô
             BitmapImage imgCreateBeam = new BitmapImage(new Uri(@"C:\ProgramData\Autodesk\ApplicationPlugins\BIM_5D_Tools.bundle\Contents\Resources\Lanhto.png"));
-            var btnCreateBeam = new PushButtonData("btnCreateBeam", "Tạo lanh tô", Assembly.GetExecutingAssembly().Location,
+            var btnCreateBeam = new PushButtonData("btnCreateBeam", "Create lintel", Assembly.GetExecutingAssembly().Location,
                 "DDIC_Tools.Command.CreateBeam");
             btnCreateBeam.LargeImage = imgCreateBeam;
-            btnCreateBeam.ToolTip = "Tạo lanh tô cho cửa";
+            btnCreateBeam.ToolTip = "Create lintel to door";
 
             var btn8 = panel5.AddItem(btnCreateBeam) as PushButton;
-            #endregion
-
-            #region Button thêm số thứ tự trong bảng thống kê
-            BitmapImage imageAddNumber = new BitmapImage(new Uri(@"C:\ProgramData\Autodesk\ApplicationPlugins\BIM_5D_Tools.bundle\Contents\Resources\numbering.png"));
-            PushButtonData btnAddNumber = new PushButtonData("btnAddNumber", "Thêm STT", Assembly.GetExecutingAssembly().Location,
-                "DDIC_Tools.Command.AddNumberSchedule");
-            btnAddNumber.ToolTip = "Thêm STT trong bảng thống kê";
-            btnAddNumber.LargeImage = imageAddNumber;
-
-            PushButton btn9 = panel.AddItem(btnAddNumber) as PushButton;
             #endregion
 
             return Result.Succeeded;

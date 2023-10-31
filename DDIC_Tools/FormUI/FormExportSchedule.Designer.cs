@@ -72,14 +72,16 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnAdd.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Location = new System.Drawing.Point(624, 25);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(70, 31);
             this.btnAdd.TabIndex = 12;
-            this.btnAdd.Text = "Thêm";
+            this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -88,9 +90,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(320, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Chọn giá trị";
+            this.label2.Text = "Choose value";
             // 
             // cbCategory
             // 
@@ -106,18 +108,21 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(5, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
+            this.label1.Size = new System.Drawing.Size(93, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Chọn parameter";
+            this.label1.Text = "Choose parameter";
             // 
             // btnExport
             // 
+            this.btnExport.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnExport.FlatAppearance.BorderSize = 0;
+            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExport.Location = new System.Drawing.Point(186, 460);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(314, 42);
             this.btnExport.TabIndex = 14;
             this.btnExport.Text = "Export Excel";
-            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.UseVisualStyleBackColor = false;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // FormExportSchedule
@@ -128,7 +133,7 @@
             this.Controls.Add(this.flowLayoutPanel);
             this.Controls.Add(this.btnExport);
             this.Name = "FormExportSchedule";
-            this.Text = "Xuất bảng thống kê";
+            this.Text = "Export schedule";
             this.Load += new System.EventHandler(this.FormExportSchedule_Load);
             this.flowLayoutPanel.ResumeLayout(false);
             this.grbSelect.ResumeLayout(false);

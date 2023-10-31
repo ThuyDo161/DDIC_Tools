@@ -59,7 +59,7 @@ namespace DDIC_Tools
         {
             if (filePath == "")
             {
-                TaskDialog.Show("Thông báo", "Hãy chọn file để import!");
+                TaskDialog.Show("Notification", "Please select the file to import!");
             }
             else
             {
@@ -156,7 +156,7 @@ namespace DDIC_Tools
                 }
             }
 
-            TaskDialog.Show("Thông báo", "Import thành công!");
+            TaskDialog.Show("Notification", "Import successfully!");
         }
 
         private void RenameSchedule(ViewSchedule schedule, string name)

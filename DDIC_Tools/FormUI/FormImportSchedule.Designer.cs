@@ -50,12 +50,15 @@
             // 
             // btnImport
             // 
+            this.btnImport.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnImport.FlatAppearance.BorderSize = 0;
+            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImport.Location = new System.Drawing.Point(284, 355);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(163, 40);
             this.btnImport.TabIndex = 3;
             this.btnImport.Text = "Import";
-            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.UseVisualStyleBackColor = false;
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // panel1
@@ -121,9 +124,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(5, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 13);
+            this.label3.Size = new System.Drawing.Size(102, 13);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Chọn parameter 3";
+            this.label3.Text = "Choose parameter 3";
             // 
             // grbSelect2
             // 
@@ -149,9 +152,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(5, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 13);
+            this.label2.Size = new System.Drawing.Size(102, 13);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Chọn parameter 2";
+            this.label2.Text = "Choose parameter 2";
             // 
             // grbSelect1
             // 
@@ -177,9 +180,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(5, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 13);
+            this.label1.Size = new System.Drawing.Size(102, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Chọn parameter 1";
+            this.label1.Text = "Choose parameter 1";
             // 
             // FormImportSchedule
             // 
@@ -189,7 +192,7 @@
             this.Controls.Add(this.btnImport);
             this.Controls.Add(this.panel1);
             this.Name = "FormImportSchedule";
-            this.Text = "Tạo bảng thống kê từ file txt";
+            this.Text = "Create schedule from file txt";
             this.Load += new System.EventHandler(this.FormImportSchedule_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

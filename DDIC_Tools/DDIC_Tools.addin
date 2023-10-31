@@ -74,10 +74,10 @@
 	</AddIn>
 	<AddIn Type="Command">
 		<Text>Command DDIC_Tools</Text>
-		<Description>Add number to schedule</Description>
+		<Description>Formwork</Description>
 		<Assembly>DDIC_Tools.dll</Assembly>
-		<FullClassName>DDIC_Tools.Command.AddNumberSchedule</FullClassName>
-		<ClientId>E55AA4C7-2F1A-4012-951A-956B4B2715B9</ClientId>
+		<FullClassName>DDIC_Tools.Command.FormWorkBeam</FullClassName>
+		<ClientId>FA15F2D1-CB08-4DD4-ACDD-7E85A219CA15</ClientId>
 		<VendorId>com.typepad.thebuildingcoder</VendorId>
 		<VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
 	</AddIn>

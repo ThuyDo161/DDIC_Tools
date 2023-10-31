@@ -64,7 +64,7 @@ namespace DDIC_Tools.FormUI
         {
             if (cklstBeamType.CheckedItems.Count == 0)
             {
-                MessageBox.Show("Bạn phải chọn kiểu lanh tô!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("You must choose the lintel style!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -79,7 +79,7 @@ namespace DDIC_Tools.FormUI
                     trans.Commit();
                 }
 
-                TaskDialog.Show("Thông báo", "Tạo lanh tô thành công!");
+                TaskDialog.Show("Notification", "Create successful lintel!");
                 this.Close();
             }
         }
