@@ -46,7 +46,7 @@ namespace DDIC_Tools.ComponentFuncs
                         tr.Start();
 
                         InstanceBinding instanceBinding = app.Create.NewInstanceBinding(C_Set);
-                        uiapp.ActiveUIDocument.Document.ParameterBindings.Insert(definition, (Binding)instanceBinding, BuiltInParameterGroup.PG_DATA);
+                        uiapp.ActiveUIDocument.Document.ParameterBindings.Insert(definition, instanceBinding, BuiltInParameterGroup.PG_DATA);
 
                         tr.Commit();
                         return true;

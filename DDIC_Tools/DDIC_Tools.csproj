@@ -70,6 +70,7 @@
     <Compile Include="Command\FinishWallCreate.cs" />
     <Compile Include="Command\FormWorkBeam.cs" />
     <Compile Include="Command\ImportFolderImage.cs" />
+    <Compile Include="Command\ManualFormwork.cs" />
     <Compile Include="ComponentFuncs\DataTools.cs" />
     <Compile Include="ComponentFuncs\CommonFunctions.cs" />
     <Compile Include="ComponentFuncs\ElementCollect.cs" />

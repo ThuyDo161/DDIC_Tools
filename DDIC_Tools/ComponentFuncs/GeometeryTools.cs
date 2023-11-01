@@ -75,16 +75,22 @@ namespace DDIC_Tools.ComponentFuncs
             Solid solid = S;
             DirectShapeLibrary directShapeLibrary = DirectShapeLibrary.GetDirectShapeLibrary(D);
             DirectShapeType directShapeType = DirectShapeType.Create(D, ObjName, new ElementId(BC));
-            directShapeType.SetShape(new List<GeometryObject>() { solid });
-            directShapeLibrary.AddDefinitionType(ObjName, (directShapeType).Id);
-            DirectShape elementInstance = DirectShape.CreateElementInstance(D, directShapeType.Id, directShapeType.Category.Id, ObjName, Transform.Identity);
-            elementInstance.SetTypeId(directShapeType.Id);
+            directShapeType.SetShape((IList<GeometryObject>)new List<GeometryObject>()
+      {
+        (GeometryObject) solid
+      });
+            directShapeLibrary.AddDefinitionType(ObjName, ((Element)directShapeType).Id);
+            DirectShape elementInstance = DirectShape.CreateElementInstance(D, ((Element)directShapeType).Id, ((Element)directShapeType).Category.Id, ObjName, Transform.Identity);
+            elementInstance.SetTypeId(((Element)directShapeType).Id);
             elementInstance.ApplicationId = "Application id";
             elementInstance.ApplicationDataId = "Geometry object id";
-            elementInstance.SetShape(new GeometryObject[1] { solid });
-            directShapeType.Dispose();
+            elementInstance.SetShape((IList<GeometryObject>)new GeometryObject[1]
+            {
+        (GeometryObject) solid
+            });
+            ((Element)directShapeType).Dispose();
             directShapeLibrary.Dispose();
-            return elementInstance;
+            return (Element)elementInstance;
         }
     }
 }
