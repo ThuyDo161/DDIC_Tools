@@ -45,7 +45,7 @@ namespace DDIC_Tools.ComponentFuncs
             {
                 FormworkFace formworkFace = new FormworkFace();
                 formworkFace.Geometry = solid3;
-                formworkFace.HostID = E.UniqueId;
+                formworkFace.HostID = E.Id.ToString();
                 formworkFace.ErrorID = str;
                 formworkFace.HostElement = E;
                 formworkFace.HostFace = F;

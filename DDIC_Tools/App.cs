@@ -24,6 +24,7 @@ namespace DDIC_Tools
             string panelName3 = "Views";
             string panelName4 = "Modify";
             string panelName5 = "Structure Framing";
+            string panelName6 = "Formwork";
 
             a.CreateRibbonTab(tabName);
 
@@ -33,6 +34,7 @@ namespace DDIC_Tools
             var panel3 = a.CreateRibbonPanel(tabName, panelName3);
             var panel4 = a.CreateRibbonPanel(tabName, panelName4);
             var panel5 = a.CreateRibbonPanel(tabName, panelName5);
+            var panel6 = a.CreateRibbonPanel(tabName, panelName6);
 
             #region Button tạo bảng thống kê từ file txt
             //BitmapImage image = new BitmapImage(new Uri(@"C:\Users\Administrator\Documents\DDIC\DDIC_Tools\DDIC_Tools\Resources\Import.png"));
@@ -119,6 +121,16 @@ namespace DDIC_Tools
             btnCreateBeam.ToolTip = "Create lintel to door";
 
             var btn8 = panel5.AddItem(btnCreateBeam) as PushButton;
+            #endregion
+
+            #region Tạo formwork
+            BitmapImage imgFormwork = new BitmapImage(new Uri(@"C:\ProgramData\Autodesk\ApplicationPlugins\BIM_5D_Tools.bundle\Contents\Resources\Formwork.png"));
+            var btnFormwork = new PushButtonData("btnCreateBeam", "Create lintel", Assembly.GetExecutingAssembly().Location,
+                "DDIC_Tools.Command.FormWorkBeam");
+            btnFormwork.LargeImage = imgFormwork;
+            btnFormwork.ToolTip = "Create formwork";
+
+            var btn9 = panel5.AddItem(btnFormwork) as PushButton;
             #endregion
 
             return Result.Succeeded;

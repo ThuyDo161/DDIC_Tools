@@ -59,10 +59,8 @@ namespace DDIC_Tools.Command
                     }
                 }
                 CategorySet C_Set = document.Application.Create.NewCategorySet();
-                Category category1 = document.Settings.Categories.get_Item(BuiltInCategory.OST_Floors);
-                Category category2 = document.Settings.Categories.get_Item(BuiltInCategory.OST_Walls);
+                Category category1 = document.Settings.Categories.get_Item(BuiltInCategory.OST_GenericModel);
                 C_Set.Insert(category1);
-                C_Set.Insert(category2);
                 DataTools.AddSharedParameterToCategory(commandData, C_Set, "SurfaceArea", "DDIC_Tools", ParameterType.Area);
                 DataTools.AddSharedParameterToCategory(commandData, C_Set, "HostID", "DDIC_Tools", ParameterType.Text, true);
                 DataTools.AddSharedParameterToCategory(commandData, C_Set, "Width", "DDIC_Tools", ParameterType.Length, true);
